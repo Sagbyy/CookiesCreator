@@ -96,11 +96,11 @@ function displayCookies(e) {
     
     const cookies = document.cookie.replace(/\s/g, '').split(';').reverse();
     
-    if (!cookies) {
+    if (!cookies[0]) {
         if (lockText) return;
         
         lockText = true;
-        sectionCookies.textContent = "Il n'y à aucun cookie pour le moment. Essayer d'en créer un !"
+        sectionCookies.innerHTML = `<p class="no_cookies_text">Il n'y a aucun cookie pour le moment. Essayer d'en créer un !</p>`
 
         setTimeout(() => {
             sectionCookies.textContent = "";
@@ -108,12 +108,13 @@ function displayCookies(e) {
         }, 1500)
     } 
     else {
-        // Si les cookies sont afficher
+        // Si les cookies sont afficher et qu'on clique sur le bouton "Cacher"
         if (showCookies) {
             showCookiesButton.textContent = "Afficher 🙉";
             sectionCookies.innerHTML = "";
             showCookies = false;
         }
+        // Si les cookies ne sont pas afficher
         else {
             handleCookiesElement(cookies);
             
