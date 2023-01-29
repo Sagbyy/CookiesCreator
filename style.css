@@ -105,8 +105,12 @@ form input:focus {
 }
 
 @media screen and (max-width: 1050px) {
+    body {
+        padding: 50px 20px;
+    }
+
     form {
-        width: 90%;
+        width: 100%;
     }
 
     .button_section button {
