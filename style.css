@@ -33,7 +33,7 @@ body {
     background: var(--gradient-background);
     font-size: 15px;
     font-family: "Open Sans", Arial, sans-serif;
-    padding: 50px;
+    padding: 50px 0;
 }
 
 /*----------------- Form ---------------------*/
@@ -108,7 +108,12 @@ form input:focus {
     form {
         width: 90%;
     }
+
+    .button_section button {
+        font-size: 1em;
+    }
 }
+
 
 /*----------------- Toast ---------------------*/
 

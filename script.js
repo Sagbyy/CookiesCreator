@@ -124,17 +124,6 @@ function displayCookies(e) {
     }
 }
 
-function handleCookiesElement(cookies) {
-    
-    cookies.forEach(cookie => {
-        const formatCookie = cookie.split('=');
-        const cookieName = decodeURIComponent(formatCookie[0]);
-        const cookieValue = formatCookie[1];
-        
-        createCookieElement(cookieName, cookieValue);
-    });
-}
-
 function createCookieElement(cookieName, cookieValue) {
     const cookieElement = document.createElement('div');
 
@@ -159,4 +148,15 @@ function createCookieElement(cookieName, cookieValue) {
         document.cookie = `${cookieNameURI}=; expires=${new Date(0)}`;
         cookieElement.remove();
     })
+}
+
+function handleCookiesElement(cookies) {
+
+    cookies.forEach(cookie => {
+        const formatCookie = cookie.split('=');
+        const cookieName = decodeURIComponent(formatCookie[0]);
+        const cookieValue = formatCookie[1];
+
+        createCookieElement(cookieName, cookieValue);
+    });
 }
