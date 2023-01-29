@@ -21,6 +21,8 @@
     --black-background: #2c2c2c;
     --button-color-hover: #522531;
     --black-text: #120907;
+    --background-white: #f1f1f1;
+    --delete-button: #DC3545;
 }
 
 
@@ -85,7 +87,7 @@ form input:focus {
 }
 
 .button_section button {
-    width: 120px;
+    width: 125px;
     padding: 15px;
     margin: 0 10px;
     background: var(--button-color);
@@ -100,4 +102,70 @@ form input:focus {
 
 .button_section button:hover {
     background: var(--button-color-hover);
+}
+
+@media screen and (max-width: 1050px) {
+    form {
+        width: 90%;
+    }
+}
+
+/*----------------- Toast ---------------------*/
+
+.toast_container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.toast {
+    color: var(--black-text);
+    background: var(--background-white);
+    padding: 20px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/*----------------- Cookies Element ---------------------*/
+
+.section_cookies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 25px;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.cookie_element {
+    background: var(--background-white);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+    border-top: 9px solid var(--black-background);
+    border-radius: 4px;
+    padding: 25px;
+    position: relative;
+}
+
+.span_cookie_element {
+    font-weight: 700;
+}
+
+.text_cookie_element:first-of-type {
+    margin-bottom: 5px;
+}
+
+.button_delete_cookie {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--delete-button);
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    cursor: pointer;
 }
