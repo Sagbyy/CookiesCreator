@@ -145,7 +145,7 @@ function createCookieElement(cookieName, cookieValue) {
     cookieElement.querySelector('.button_delete_cookie').addEventListener('click', e => {
         createToast({name: cookieName, state: "supprimé", color: "red", emoji: "❌"});
 
-        document.cookie = `${cookieNameURI}=; expires=${new Date(0)}`;
+        document.cookie = `${cookieNameURI}=; expires=${new Date(0)}; path=/`;
         cookieElement.remove();
     })
 }
